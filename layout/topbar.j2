@@ -1,0 +1,24 @@
+{# Adds in the topbar #}
+
+{% extends "base.j2" %}
+
+
+
+{% block body %}
+<div class="navbar navbar-inverse navbar-fixed-top">
+  {% block topbar %}
+  <div class="navbar-inner">
+    <div class="container">
+      <a class="brand" href="{{ home_url }}">{{ site_title }}</a>
+      <div class="nav-collapse collapse">
+        {% from "macros.j2" import render_main_menu with context %}
+        {{ render_main_menu() }}
+      </div>
+    </div>
+  </div>
+  {% endblock topbar %}
+</div>
+
+{{ super() }} {# Use this to include the rest of the body block as it was originally defined #}
+
+{% endblock body %}

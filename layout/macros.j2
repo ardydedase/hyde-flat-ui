@@ -1,0 +1,48 @@
+{% macro render_excerpt(res, class=None) %}
+{% refer to res.relative_path as post %}
+<article {{'class='~class if class }}>
+<h3><a href="{{ content_url(res.url) }}">{{ res.meta.title }}</a></h3>
+<a href="{{ content_url(res.url) }}">{{ post.image|markdown|typogrify }}</a>
+{{ post.excerpt|markdown|typogrify }}
+<time datetime="{{ res.meta.created.strftime('%Y-%m-%d') }}">
+    Posted: {{ res.meta.created.strftime('%a, %d %b %Y') }}
+</time>
+</article>
+{% endmacro %}
+
+{% macro render_nav(menu, cls=None) -%}
+{% if menu -%}
+<header class="row container-fluid">
+
+  <nav class="navbar navbar-inverse">
+    <div class="navbar-inner">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target="#nav-collapse-01"></button>
+            <div class="nav-collapse collapse" id="nav-collapse-01">
+                <ul class="nav">
+                    {% for item in menu -%}
+                    {% set active = False -%}
+                    {% if item.type == 'page' -%}
+                        {% set active = (resource.url ==
+                            site.content.resource_from_relative_path(item.url).url) -%}
+                    {% else -%}
+                        {% set active = (node ==
+                            site.content.node_from_relative_path(item.url)) -%}
+                    {%- endif %}
+                    {% set classes = ['button', 'white'] -%}
+                    {% do classes.append('active') if active -%}
+                    {% do classes.append(item.css_class) if item.css_class -%}
+                    <li>
+                        <a title="{{ item.description }}"
+                            class="{{ classes|join(' ') }}"
+                            href="{{ content_url(item.url) }}">
+                            {{ item.name }}
+                        </a>
+                    </li>
+                    {%- endfor %}
+                </ul>
+            </div><!--/.nav -->
+    </div>
+  </nav>
+</header>
+{%- endif %}
+{%- endmacro %}
