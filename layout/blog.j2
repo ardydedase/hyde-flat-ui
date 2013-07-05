@@ -18,7 +18,7 @@
 {%- endfilter %}
 
 {% if resource.meta.tags %}
-<div class="tagsinput clear">
+<div class="tagsinput">
 {% for tag in resource.meta.tags %}
     <a class="tag" href="{{ content_url('blog/tags/'~tag~'.html') }}">
         {{ tag }}

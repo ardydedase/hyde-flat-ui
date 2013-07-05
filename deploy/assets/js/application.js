@@ -30,7 +30,7 @@ String.prototype.repeat = function(num) {
     });
 
     // Tags Input
-    $(".tagsinput").tagsInput();
+    // $(".tagsinput").tagsInput();
 
     // jQuery UI Sliders
     var $slider = $("#slider");

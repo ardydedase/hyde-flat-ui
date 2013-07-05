@@ -32,7 +32,7 @@ body {
   min-height: 100%;
   height: auto !important;
   height: 100%;
-  margin: 0 auto -60px;
+  margin: 0 auto -125px;
 }
 .container {
   max-width: 800px;
@@ -73,7 +73,7 @@ time {
 }
 #push,
 #footer {
-  height: 100px;
+  height: 125px;
 }
 .footer {
   padding-top: 20px;
