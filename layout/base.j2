@@ -54,23 +54,48 @@
 <body id="{{ resource.meta.id if resource.meta.id else resource.slug }}">
 
   {% block content %}
-  <div id="container" class="container">
-    {% block header %}    
-    <h1 class="logo">
-      {{ blog_title }}
-      <small><a href="/" title="Home" data-toggle="tooltip" id="home">Blog</a> of <a href="/about.html" id="about" data-toggle="tooltip" title="About me">{{ blogger_name }}</a></small>      
-    </h1>        
-    {% endblock %}
+  <div id="wrapper">
+    <div id="container" class="container">
+      {% block header %}    
+      <h1 class="logo">
+        {{ blog_title }}
+        <small><a href="/blog" title="Blog" id="home">Blog</a> of <a href="/about.html" id="about" data-toggle="tooltip" title="About me">{{ blogger_name }}</a></small>      
+      </h1>        
+      {% endblock %}
 
-    {% block container %}
-      <section class="content">
-      {% block main %}
-      {% endblock main %}
-      </section>
-    {% endblock container %}
-  </div> <!--! end of #container -->
+      {% block container %}
+        <nav class="row top-nav">
+          <ul>
+            <li><a href="/">Home</a> </li>
+            <li><a href="/about.html">About</a></li>
+          </ul>
 
-  <footer class="footer">
+          <!-- <div id="twitter_share">
+          <a href="http://twitter.com/share"
+              class="twitter-share-button"
+              data-count="vertical"
+              data-via="{{ tweet_via }}">Tweet</a>
+              <script type="text/javascript"
+                  src="http://platform.twitter.com/widgets.js"></script>
+          </div>
+          <div id="facebook_like">
+          <iframe src="http://www.facebook.com/plugins/like.php?href&amp;layout=box_count&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=65"
+                      scrolling="no"
+                      frameborder="0"
+                      style="border:none; overflow:hidden; width:450px; height:65px;"
+                      allowTransparency="true"></iframe>
+          </div> -->
+        </nav>      
+        <section class="content">
+        {% block main %}
+        {% endblock main %}
+        </section>
+      {% endblock container %}
+    </div> <!--! end of #container -->
+    <div id="push"></div>
+  </div>
+
+  <footer id="footer" class="footer">
     <div class="container">
       <p>Built with Hyde and FlatUI</p>      
       <p><a href="/">Home</a>&nbsp;&nbsp;&nbsp;<a href="/about.html">About</a></p>      

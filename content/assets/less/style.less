@@ -1,6 +1,8 @@
 // Loading config with variables (changing them leads to changing a color scheme)
 @import "config";
-
+html, body {
+	height:100%;
+}
 
 .logo {
 	font-weight:normal;
@@ -10,6 +12,25 @@
 		font-size:20px;
 		display:block;
 	}
+}
+
+.top-nav {
+	margin-top:20px;
+	ul {
+		margin-left:30px;
+		list-style-type: none;
+		li {			
+			float:left;
+			margin-right:10px;
+		}
+	}	
+}
+
+#wrapper {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+	margin: 0 auto -60px;
 }
 
 .container {
@@ -56,6 +77,10 @@ ul.listing {
 time {
 	font-style:italic;
 	color:@asbestos;
+}
+
+#push, #footer {
+	height:100px;
 }
 
 .footer {
