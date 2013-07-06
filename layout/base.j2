@@ -69,22 +69,6 @@
             <li><a href="/">Home</a> </li>
             <li><a href="/about.html">About</a></li>
           </ul>
-
-          <!-- <div id="twitter_share">
-          <a href="http://twitter.com/share"
-              class="twitter-share-button"
-              data-count="vertical"
-              data-via="{{ tweet_via }}">Tweet</a>
-              <script type="text/javascript"
-                  src="http://platform.twitter.com/widgets.js"></script>
-          </div>
-          <div id="facebook_like">
-          <iframe src="http://www.facebook.com/plugins/like.php?href&amp;layout=box_count&amp;show_faces=false&amp;width=450&amp;action=like&amp;font=arial&amp;colorscheme=light&amp;height=65"
-                      scrolling="no"
-                      frameborder="0"
-                      style="border:none; overflow:hidden; width:450px; height:65px;"
-                      allowTransparency="true"></iframe>
-          </div> -->
         </nav>      
         <section class="content">
         {% block main %}
@@ -100,14 +84,13 @@
       <p>Built with <a href="https://github.com/hyde/hyde" target="_blank">Hyde</a> and <a href="https://github.com/designmodo/Flat-UI" target="_blank">FlatUI</a></p>
       <p><a href="/">Home</a>&nbsp;&nbsp;&nbsp;<a href="/about.html">About</a></p>      
       <p>
-        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US" target="_blank"><img alt="Creative Commons License" style="border-width:0" src="http://i.creativecommons.org/l/by/3.0/80x15.png" /></a>
+        FlatUI for Hyde under <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US" target="_blank">CC-BY-SA 3.0</a> license.
       </p>
     </div>
   </footer>
   {% endblock content%}
   {% block js %}
   <!-- Javascript at the bottom for fast page loading -->
-
   {% block scripts %}
     <script src="//cdn.jsdelivr.net/jquery/1.8.3/jquery-1.8.3.min.js"></script>
     <script src="{{ media_url('js/jquery-ui-1.10.3.custom.min.js') }}"></script>
@@ -124,11 +107,6 @@
     <script src="http://vjs.zencdn.net/c/video.js"></script>
     <script src="{{ media_url('js/application.js') }}"></script>
   {% endblock scripts %}
-
-  <!--[if lt IE 7 ]>
-    <script src="js/libs/dd_belatedpng.js"></script>
-    <script>DD_belatedPNG.fix('img, .png_bg'); // Fix any <img> or .png_bg bg-images. Also, please read goo.gl/mZiyb </script>
-  <![endif]-->
 
   {% block analytics %}
   {% include "analytics.j2" %}
