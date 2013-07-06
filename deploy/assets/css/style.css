@@ -41,6 +41,9 @@ body {
 section.content {
   margin-top: 20px;
 }
+.post img {
+  display: block;
+}
 .title {
   font-weight: normal;
 }
